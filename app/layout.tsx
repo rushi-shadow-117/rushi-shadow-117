@@ -64,6 +64,13 @@ export default function RootLayout({
             </Script>
           </>
         )}
+        {/* Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6544859635600254"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <BackgroundGrid />
         <Navbar />
         <div className="flex-grow flex flex-col">
