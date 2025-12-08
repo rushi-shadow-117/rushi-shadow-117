@@ -47,6 +47,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="font-sans text-black selection:bg-black selection:text-white bg-white bg-noise min-h-screen flex flex-col">
+        {/* Google AdSense - must be in <head> */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6544859635600254"
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
+        />
         {/* Google Analytics 4 - only load if ID is configured */}
         {isAnalyticsEnabled() && gaId && (
           <>
@@ -64,13 +71,6 @@ export default function RootLayout({
             </Script>
           </>
         )}
-        {/* Google AdSense */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6544859635600254"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
         <BackgroundGrid />
         <Navbar />
         <div className="flex-grow flex flex-col">
