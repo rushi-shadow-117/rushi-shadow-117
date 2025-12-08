@@ -1,11 +1,17 @@
-
 import React from "react";
-import { getPostsByCategory } from "@/lib/content";
+import type { Metadata } from "next";
+import { getPostsByCategory } from "@/lib/posts";
+import { SITE_NAME } from "@/lib/site";
 import { PostRow } from "@/components/blog/PostRow";
 import { FunOrbitalIcon } from "@/components/visuals/FunOrbitalIcon";
 
-export default function FunPage() {
-  const posts = getPostsByCategory("fun");
+export const metadata: Metadata = {
+  title: `Fun | ${SITE_NAME}`,
+  description: "Photography, sci-fi books, and random obsessions.",
+};
+
+export default async function FunPage() {
+  const posts = await getPostsByCategory("fun");
 
   return (
     <main className="w-full px-6 md:px-20 pt-32 pb-24 bg-white relative z-20 flex-grow">

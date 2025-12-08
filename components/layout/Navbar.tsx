@@ -19,6 +19,7 @@ export function Navbar() {
     { href: "/life", label: "LIFE" },
     { href: "/fun", label: "FUN" },
     { href: "/about", label: "ABOUT" },
+    { href: "/faq", label: "FAQ" },
     { href: "/contact", label: "CONTACT" },
   ];
 

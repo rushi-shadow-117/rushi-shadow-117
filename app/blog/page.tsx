@@ -1,16 +1,17 @@
 import React from "react";
-import { Metadata } from "next";
-import { getAllPosts } from "@/lib/content";
+import type { Metadata } from "next";
+import { getAllPosts } from "@/lib/posts";
+import { SITE_NAME } from "@/lib/site";
 import { PostRow } from "@/components/blog/PostRow";
 import { OrbitalIcon } from "@/components/visuals/OrbitalIcon";
 
 export const metadata: Metadata = {
-  title: "Brain Dump | RP",
+  title: `Brain Dump | ${SITE_NAME}`,
   description: "Archives of thoughts on life, engineering, and entropy.",
 };
 
-export default function BlogIndex() {
-  const posts = getAllPosts();
+export default async function BlogIndex() {
+  const posts = await getAllPosts();
 
   return (
     <main className="w-full px-6 md:px-20 pt-32 pb-24 bg-white relative z-20 flex-grow">

@@ -48,8 +48,8 @@ const App = () => {
     Component = <BlogIndex />;
   } else if (path.startsWith("/blog/")) {
     const slug = path.replace("/blog/", "");
-    // Assuming BlogPost can accept params synchronously for this demo
-    Component = <BlogPost params={{ slug }} />;
+    // Pass params as Promise to match Next.js 15 App Router pattern
+    Component = <BlogPost params={Promise.resolve({ slug })} />;
   } else {
     Component = <Home />;
   }

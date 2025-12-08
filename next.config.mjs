@@ -34,6 +34,10 @@ const nextConfig = {
       },
     ];
   },
+  // Ensure ESM modules work correctly
+  experimental: {
+    serverComponentsExternalPackages: ['remark', 'remark-html'],
+  },
 };
 
 export default nextConfig;

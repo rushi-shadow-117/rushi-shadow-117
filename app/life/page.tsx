@@ -1,11 +1,17 @@
-
 import React from "react";
-import { getPostsByCategory } from "@/lib/content";
+import type { Metadata } from "next";
+import { getPostsByCategory } from "@/lib/posts";
+import { SITE_NAME } from "@/lib/site";
 import { PostRow } from "@/components/blog/PostRow";
 import { LifeOrbitalIcon } from "@/components/visuals/LifeOrbitalIcon";
 
-export default function LifePage() {
-  const posts = getPostsByCategory("life");
+export const metadata: Metadata = {
+  title: `Life | ${SITE_NAME}`,
+  description: "Optimizing for happiness, health, and serendipity. The human side.",
+};
+
+export default async function LifePage() {
+  const posts = await getPostsByCategory("life");
 
   return (
     <main className="w-full px-6 md:px-20 pt-32 pb-24 bg-white relative z-20 flex-grow">

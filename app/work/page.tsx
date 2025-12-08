@@ -1,11 +1,17 @@
-
 import React from "react";
-import { getPostsByCategory } from "@/lib/content";
+import type { Metadata } from "next";
+import { getPostsByCategory } from "@/lib/posts";
+import { SITE_NAME } from "@/lib/site";
 import { PostRow } from "@/components/blog/PostRow";
 import { WorkOrbitalIcon } from "@/components/visuals/WorkOrbitalIcon";
 
-export default function WorkPage() {
-  const posts = getPostsByCategory("work");
+export const metadata: Metadata = {
+  title: `Work | ${SITE_NAME}`,
+  description: "Projects, case studies, and engineering philosophy. How I build.",
+};
+
+export default async function WorkPage() {
+  const posts = await getPostsByCategory("work");
 
   return (
     <main className="w-full px-6 md:px-20 pt-32 pb-24 bg-white relative z-20 flex-grow">

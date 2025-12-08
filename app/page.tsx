@@ -1,28 +1,33 @@
-
 import React from "react";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
-import { getAllPosts } from "@/lib/content";
+import { getAllPosts } from "@/lib/posts";
+import { SITE_NAME } from "@/lib/site";
 import { PostRow } from "@/components/blog/PostRow";
 import { OrbitalIcon } from "@/components/visuals/OrbitalIcon";
+import { PortraitImage } from "@/components/visuals/PortraitImage";
 
-// Using standard img tag for client-side preview instead of next/image
-const PortraitImage = () => (
-  <img
-    src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=1889&auto=format&fit=crop"
-    alt="Portrait"
-    className="absolute inset-0 w-full h-full object-cover object-top"
-  />
-);
+export const metadata: Metadata = {
+  title: SITE_NAME,
+  description: "A production-grade personal site featuring a monochromatic, engineering-focused design system.",
+};
 
-export default function Home() {
+export default async function Home() {
   // Show the latest 3 posts regardless of category
-  const posts = getAllPosts().slice(0, 3);
+  let posts: Awaited<ReturnType<typeof getAllPosts>> = [];
+  try {
+    const allPosts = await getAllPosts();
+    posts = allPosts.slice(0, 3);
+  } catch (error) {
+    console.error("Error loading posts on home page:", error);
+    // Continue with empty posts array if loading fails
+  }
 
   return (
     <>
       {/* 1. Hero / Work Visual */}
-      <section className="relative z-10 w-full pt-32 pb-24 md:py-32 flex flex-col items-center border-b border-black/10 bg-neutral-50/50">
+      <section className="relative z-10 w-full pt-32 pb-24 md:py-32 flex flex-col items-center border-b border-black/10 bg-white">
         <div className="absolute top-28 left-6 md:top-32 md:left-20">
           <div className="font-mono text-xs uppercase text-neutral-500 tracking-wider flex flex-col">
             <span>Tech.</span>
@@ -55,11 +60,11 @@ export default function Home() {
           </div>
 
           {/* Image Container */}
-          <div className="relative w-[80%] h-[80%] md:w-[500px] md:h-[600px] overflow-hidden grayscale contrast-125 shadow-2xl shadow-neutral-200 transition-transform duration-500 group-hover:scale-105">
+          <div className="relative w-[80%] h-[80%] md:w-[500px] md:h-[600px] overflow-hidden contrast-110 shadow-2xl shadow-neutral-200 transition-transform duration-500 group-hover:scale-105">
             <PortraitImage />
-            {/* Overlay Graphics - Static (default) */}
+            {/* Overlay Graphics - Always visible */}
             <svg
-              className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[110%] h-[50%] opacity-40 pointer-events-none transition-opacity duration-500 group-hover:opacity-0"
+              className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[110%] h-[50%] opacity-40 pointer-events-none z-20"
               viewBox="0 0 200 100"
             >
               <line
@@ -141,7 +146,9 @@ export default function Home() {
         {/* Floating UI Element: Bottom Right (Socials) */}
         <div className="relative md:absolute mt-8 md:mt-0 md:bottom-20 md:right-20 flex md:flex-col gap-6 md:gap-2 items-center md:items-end">
           <a
-            href="#"
+            href="https://www.shadowsolutions.tech/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-medium tracking-tight hover:text-neutral-500 transition-colors flex items-center gap-2 group"
           >
             <span className="group-hover:-translate-x-1 transition-transform duration-300">
@@ -150,7 +157,9 @@ export default function Home() {
             <ArrowUpRight className="w-4 h-4 opacity-50" />
           </a>
           <a
-            href="#"
+            href="https://caleoai.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-medium tracking-tight hover:text-neutral-500 transition-colors flex items-center gap-2 group"
           >
             <span className="group-hover:-translate-x-1 transition-transform duration-300">
@@ -159,7 +168,9 @@ export default function Home() {
             <ArrowUpRight className="w-4 h-4 opacity-50" />
           </a>
           <a
-            href="#"
+            href="https://getverity.io"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-medium tracking-tight hover:text-neutral-500 transition-colors flex items-center gap-2 group"
           >
             <span className="group-hover:-translate-x-1 transition-transform duration-300">
@@ -168,20 +179,13 @@ export default function Home() {
             <ArrowUpRight className="w-4 h-4 opacity-50" />
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/rushi-patel-uiuc/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-medium tracking-tight hover:text-neutral-500 transition-colors flex items-center gap-2 group"
           >
             <span className="group-hover:-translate-x-1 transition-transform duration-300">
               LinkedIn
-            </span>
-            <ArrowUpRight className="w-4 h-4 opacity-50" />
-          </a>
-          <a
-            href="#"
-            className="text-sm font-medium tracking-tight hover:text-neutral-500 transition-colors flex items-center gap-2 group"
-          >
-            <span className="group-hover:-translate-x-1 transition-transform duration-300">
-              Instagram
             </span>
             <ArrowUpRight className="w-4 h-4 opacity-50" />
           </a>

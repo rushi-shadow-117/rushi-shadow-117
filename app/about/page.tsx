@@ -1,6 +1,12 @@
-
 import React from "react";
+import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/site";
 import { OrbitalIcon } from "@/components/visuals/OrbitalIcon";
+
+export const metadata: Metadata = {
+  title: `About | ${SITE_NAME}`,
+  description: "I am a builder, writer, and product engineer based in Chicago.",
+};
 
 export default function About() {
   return (

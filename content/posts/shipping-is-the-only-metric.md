@@ -1,8 +1,11 @@
 ---
 title: "Shipping is the only metric"
+slug: "shipping-is-the-only-metric"
 date: "2024-11-22"
 description: "Perfectionism is procrastination wrapped in vanity. If it's not live, it doesn't exist. Just ship the v1."
+category: "work"
 tags: ["product", "startup", "mindset"]
+status: "published"
 ---
 
 If it's not live, it doesn't exist.

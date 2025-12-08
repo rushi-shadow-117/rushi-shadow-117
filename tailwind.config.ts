@@ -9,6 +9,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        'xs': ['0.8rem', { lineHeight: '1.1rem', letterSpacing: '0.025em' }],
+        'sm': ['0.95rem', { lineHeight: '1.3rem', letterSpacing: '0.025em' }],
+        'base': ['1.1rem', { lineHeight: '1.6rem', letterSpacing: '0.01em' }],
+        'lg': ['1.25rem', { lineHeight: '1.85rem', letterSpacing: '0.01em' }],
+        'xl': ['1.4rem', { lineHeight: '1.9rem', letterSpacing: '0.01em' }],
+        '2xl': ['1.65rem', { lineHeight: '2.2rem', letterSpacing: '0.01em' }],
+        '3xl': ['2.1rem', { lineHeight: '2.5rem', letterSpacing: '0.01em' }],
+        '4xl': ['2.5rem', { lineHeight: '2.8rem', letterSpacing: '0.01em' }],
+        '5xl': ['3.3rem', { lineHeight: '1', letterSpacing: '0.01em' }],
+        '6xl': ['4.2rem', { lineHeight: '1', letterSpacing: '0.01em' }],
+        '7xl': ['5rem', { lineHeight: '1', letterSpacing: '0.01em' }],
+        '8xl': ['6.6rem', { lineHeight: '1', letterSpacing: '0.01em' }],
+      },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
         mono: ["var(--font-jetbrains)", "monospace"],

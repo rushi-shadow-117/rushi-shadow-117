@@ -5,6 +5,27 @@
 @layer base {
   body {
     @apply antialiased;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Make all text darker and bolder by default, but not in footer */
+  p:not(footer p), span:not(footer span), div:not(footer div), a:not(footer a), li:not(footer li), td:not(footer td), th:not(footer th) {
+    color: #000000;
+    font-weight: 500;
+  }
+  
+  /* Increase heading weights, but not in footer */
+  h1:not(footer h1), h2:not(footer h2), h3:not(footer h3), h4:not(footer h4), h5:not(footer h5), h6:not(footer h6) {
+    font-weight: 700;
+    color: #000000;
+  }
+  
+  /* Footer should keep its white text */
+  footer, footer * {
+    color: inherit;
   }
 }
 

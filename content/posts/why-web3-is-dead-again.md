@@ -1,8 +1,11 @@
 ---
 title: "Why web3 is dead (again)"
+slug: "why-web3-is-dead-again"
 date: "2024-12-04"
 description: "The cycle repeats. We built infrastructure for infrastructure. Now we need to actually build products people want to use."
+category: "work"
 tags: ["crypto", "web3", "engineering"]
+status: "published"
 ---
 
 The cycle repeats. We spent the last four years building infrastructure for infrastructure. We built bridges to nowhere, L2s for L1s that nobody uses, and governance tokens for protocols that govern nothing.

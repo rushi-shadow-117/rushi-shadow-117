@@ -1,8 +1,11 @@
 ---
 title: "Optimizing for serendipity"
+slug: "optimizing-for-serendipity"
 date: "2024-10-10"
 description: "How being loud on the internet leads to the best opportunities. Increased surface area for luck."
+category: "life"
 tags: ["career", "luck", "writing"]
+status: "published"
 ---
 
 Luck is not random. Luck is a function of your surface area.

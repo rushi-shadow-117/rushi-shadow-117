@@ -1,6 +1,12 @@
-
 import React from "react";
+import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
+import { SITE_NAME } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: `Contact | ${SITE_NAME}`,
+  description: "I love talking to people. Get in touch about anything.",
+};
 
 export default function Contact() {
   return (
@@ -27,12 +33,13 @@ export default function Contact() {
            <div>
              <span className="font-mono text-xs uppercase text-neutral-500 mb-4 block">Socials</span>
              <div className="flex flex-col gap-4">
-               <a href="#" className="flex items-center gap-2 group text-xl font-medium">
+               <a 
+                 href="https://www.linkedin.com/in/rushi-patel-uiuc/" 
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="flex items-center gap-2 group text-xl font-medium"
+               >
                  LinkedIn
-                 <ArrowUpRight className="w-5 h-5 opacity-50 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
-               </a>
-               <a href="#" className="flex items-center gap-2 group text-xl font-medium">
-                 Instagram
                  <ArrowUpRight className="w-5 h-5 opacity-50 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
                </a>
              </div>
