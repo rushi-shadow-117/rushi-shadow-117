@@ -23,11 +23,11 @@ export function Footer() {
       {/* Big text marquee */}
       <div className="mt-20 -mb-6 opacity-20 whitespace-nowrap overflow-hidden flex select-none pointer-events-none">
         <div className="text-[6rem] md:text-[14rem] font-bold leading-none tracking-tighter animate-scroll" style={{ color: '#ffffff' }}>
-          CREATE SHIP ITERATE REPEAT CREATE SHIP ITERATE REPEAT
+          Build. Write. Improve. Repeat. Build. Write. Improve. Repeat.
         </div>
         {/* Duplicate for seamless loop */}
         <div className="text-[6rem] md:text-[14rem] font-bold leading-none tracking-tighter animate-scroll" aria-hidden="true" style={{ color: '#ffffff' }}>
-          CREATE SHIP ITERATE REPEAT CREATE SHIP ITERATE REPEAT
+          Build. Write. Improve. Repeat. Build. Write. Improve. Repeat.
         </div>
       </div>
     </footer>
