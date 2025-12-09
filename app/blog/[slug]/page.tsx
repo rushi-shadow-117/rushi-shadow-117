@@ -144,8 +144,9 @@ export default async function PostPage({ params }: PostPageProps) {
           </h1>
         </header>
 
-        {/* Ad Placement */}
-        <AdSlot className="mb-12" />
+        {/* Ad Placement - DISABLED during AdSense review */}
+        {/* TODO: Uncomment below when AdSense is approved to show ads */}
+        {/* <AdSlot className="mb-12" /> */}
 
         {/* Content */}
         <div 
