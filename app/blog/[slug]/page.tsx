@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import { getPostBySlug, Post } from "@/lib/posts";
 import { getBaseUrl, SITE_NAME, SITE_AUTHOR } from "@/lib/site";
 import { formatDate } from "@/lib/utils";
-import { AdSlot } from "@/components/visuals/AdSlot";
+// import { AdSlot } from "@/components/visuals/AdSlot"; // DISABLED during AdSense review - uncomment when approved
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
