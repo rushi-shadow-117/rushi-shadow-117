@@ -1,4 +1,4 @@
-# RP | Digital Garden
+# RP Blog
 
 A production-grade personal site featuring a monochromatic, engineering-focused design system.
 

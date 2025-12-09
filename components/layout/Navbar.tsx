@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Terminal, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -13,6 +13,18 @@ export function Navbar() {
   const [isSubscribeOpen, setIsSubscribeOpen] = useState(false);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+  // Listen for custom event to open subscribe modal from anywhere
+  useEffect(() => {
+    const handleOpenSubscribe = () => {
+      setIsSubscribeOpen(true);
+    };
+    
+    window.addEventListener("openSubscribeModal", handleOpenSubscribe);
+    return () => {
+      window.removeEventListener("openSubscribeModal", handleOpenSubscribe);
+    };
+  }, []);
 
   const navLinks = [
     { href: "/work", label: "WORK" },
@@ -88,7 +100,12 @@ export function Navbar() {
           </Link>
         ))}
         <div className="mt-8 border-t border-black/10 pt-8">
-          <Button variant="primary" icon={Terminal} onClick={() => { setIsSubscribeOpen(true); setIsMobileMenuOpen(false); }}>
+          <Button 
+            variant="primary" 
+            icon={Terminal} 
+            onClick={() => { setIsSubscribeOpen(true); setIsMobileMenuOpen(false); }}
+            data-subscribe-trigger
+          >
             SUBSCRIBE TO UPDATES
           </Button>
         </div>

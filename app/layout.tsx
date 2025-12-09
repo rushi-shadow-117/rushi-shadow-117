@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RP | Digital Garden",
+  title: "RP Blog",
   description: "A production-grade personal site featuring a monochromatic, engineering-focused design system.",
   icons: {
     icon: '/icon.svg',

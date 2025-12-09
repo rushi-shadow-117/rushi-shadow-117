@@ -6,6 +6,10 @@ import { ArrowLeft } from "lucide-react";
 import { getPostBySlug, Post } from "@/lib/posts";
 import { getBaseUrl, SITE_NAME, SITE_AUTHOR } from "@/lib/site";
 import { formatDate } from "@/lib/utils";
+import { getWordCount, getReadingTimeMinutes, formatWordCount } from "@/lib/readingTime";
+import { ScrollProgressBar } from "@/components/blog/ScrollProgressBar";
+import { Breadcrumbs, getPostBreadcrumbs } from "@/components/navigation/Breadcrumbs";
+import { PostSubscribeCTA } from "@/components/blog/PostSubscribeCTA";
 // import { AdSlot } from "@/components/visuals/AdSlot"; // DISABLED during AdSense review - uncomment when approved
 
 interface PostPageProps {
@@ -29,7 +33,7 @@ export async function generateMetadata({
 
   const baseUrl = getBaseUrl();
   const url = `${baseUrl}/blog/${post.slug}`;
-  const ogImage = `${baseUrl}/og/${post.slug}.png`; // Future enhancement: generate dynamic OG images
+  const ogImage = `${baseUrl}/og/${post.slug}`;
 
   return {
     title: `${post.title} | ${SITE_NAME}`,
@@ -70,7 +74,7 @@ export async function generateMetadata({
 function getPostJsonLd(post: Post) {
   const baseUrl = getBaseUrl();
   const url = `${baseUrl}/blog/${post.slug}`;
-  const ogImage = `${baseUrl}/og/${post.slug}.png`;
+  const ogImage = `${baseUrl}/og/${post.slug}`;
 
   return {
     "@context": "https://schema.org",
@@ -100,6 +104,24 @@ function getPostJsonLd(post: Post) {
   };
 }
 
+/**
+ * Generate JSON-LD BreadcrumbList structured data
+ */
+function getBreadcrumbJsonLd(breadcrumbs: Array<{ label: string; href: string }>) {
+  const baseUrl = getBaseUrl();
+  
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: crumb.label,
+      item: crumb.href ? `${baseUrl}${crumb.href}` : undefined,
+    })),
+  };
+}
+
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
@@ -108,26 +130,47 @@ export default async function PostPage({ params }: PostPageProps) {
     notFound();
   }
 
+  // Calculate reading time and word count
+  const wordCount = getWordCount(post.contentHtml);
+  const readingTime = getReadingTimeMinutes(wordCount);
+  const formattedWordCount = formatWordCount(wordCount);
+
+  // Generate breadcrumbs
+  const breadcrumbs = getPostBreadcrumbs(post.category, post.title);
+
   return (
     <article className="w-full pt-32 pb-24 px-6 md:px-20 bg-white relative z-20 flex-grow">
+      {/* Scroll Progress Bar */}
+      <ScrollProgressBar />
+      
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getPostJsonLd(post)) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getBreadcrumbJsonLd(breadcrumbs)) }}
+      />
 
       <div className="max-w-3xl mx-auto">
+        {/* Breadcrumbs */}
+        <Breadcrumbs items={breadcrumbs} />
+        
         {/* Navigation Back */}
-        <Link href="/blog" className="inline-flex items-center gap-2 text-neutral-500 hover:text-black mb-12 group transition-colors">
+        <Link href={`/${post.category}`} className="inline-flex items-center gap-2 text-neutral-500 hover:text-black mb-12 group transition-colors">
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          <span className="font-mono text-sm">BACK TO ARCHIVE</span>
+          <span className="font-mono text-sm">BACK TO {post.category.toUpperCase()}</span>
         </Link>
 
         {/* Header */}
         <header className="mb-12">
-          <div className="flex items-center gap-4 mb-6">
+          <div className="flex items-center gap-4 mb-6 flex-wrap">
              <span className="font-mono text-sm text-neutral-500 uppercase tracking-wide">
                {formatDate(post.date)}
+             </span>
+             <span className="font-mono text-sm text-neutral-500">
+               {readingTime} min read • {formattedWordCount} words
              </span>
              {post.tags && post.tags.length > 0 && (
                <div className="flex gap-2">
@@ -154,10 +197,13 @@ export default async function PostPage({ params }: PostPageProps) {
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
 
+        {/* Subscribe CTA */}
+        <PostSubscribeCTA />
+
         {/* Footer of Article */}
-        <div className="mt-20 pt-10 border-t border-black/10">
+        <div className="mt-12 pt-10 border-t border-black/10">
           <p className="font-mono text-sm text-neutral-500">
-            Thanks for reading. <a href="https://twitter.com/yourhandle" className="text-black hover:underline">Discuss on X</a>.
+            Thanks for reading.
           </p>
         </div>
       </div>

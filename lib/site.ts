@@ -2,7 +2,7 @@
  * Site configuration constants and helpers
  */
 
-export const SITE_NAME = "RP Digital Garden";
+export const SITE_NAME = "RP Blog";
 export const SITE_AUTHOR = "Rushi Patel";
 
 /**

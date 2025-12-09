@@ -25,7 +25,16 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {Icon && <Icon className="w-4 h-4" />}
-        {children && <span className="font-mono text-xs uppercase tracking-wide">{children}</span>}
+        {children && (
+          <span 
+            className={cn(
+              "font-mono text-xs uppercase tracking-wide",
+              variant === "primary" && "text-white"
+            )}
+          >
+            {children}
+          </span>
+        )}
       </button>
     );
   }

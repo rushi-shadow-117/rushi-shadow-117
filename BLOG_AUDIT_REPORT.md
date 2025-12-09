@@ -1,5 +1,5 @@
 # Comprehensive Blog Functionality Audit Report
-## RP | Digital Garden - Bleeding Edge Blog Implementation Guide
+## RP Blog - Bleeding Edge Blog Implementation Guide
 
 **Date:** December 8, 2024  
 **Purpose:** Identify all functionality gaps and best practices needed to transform this personal site into a production-grade, monetizable blog platform.
@@ -84,7 +84,7 @@ interface PostData {
 
 **Missing:**
 1. **Dynamic Post Metadata** (`app/blog/[slug]/page.tsx`)
-   - Unique title per post: `{post.title} | RP Digital Garden`
+   - Unique title per post: `{post.title} | RP Blog`
    - Unique description (use post.description)
    - Canonical URL
    - Open Graph tags (og:title, og:description, og:image, og:type, og:url)
@@ -449,7 +449,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const postUrl = `${baseUrl}/blog/${slug}`;
   
   return {
-    title: `${post.title} | RP Digital Garden`,
+    title: `${post.title} | RP Blog`,
     description: post.description,
     alternates: {
       canonical: postUrl,
@@ -458,7 +458,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: post.title,
       description: post.description,
       url: postUrl,
-      siteName: 'RP Digital Garden',
+      siteName: 'RP Blog',
       images: [{
         url: `${baseUrl}/og/${slug}.png`, // Dynamic OG image
         width: 1200,
@@ -503,7 +503,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   },
   "publisher": {
     "@type": "Organization",
-    "name": "RP Digital Garden",
+    "name": "RP Blog",
     "logo": {
       "@type": "ImageObject",
       "url": "https://yourdomain.com/logo.png"

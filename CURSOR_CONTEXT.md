@@ -1,8 +1,8 @@
 # Cursor Context & Technical Architecture
 
 ## 1. Project Overview
-**Name:** RP | Digital Garden
-**Type:** Personal Portfolio & Blog (Digital Garden)
+**Name:** RP Blog
+**Type:** Personal Portfolio & Blog
 **Vibe:** Monochromatic, Swiss-style engineering aesthetics, high-contrast, "sci-fi minimalism".
 **Environment:** Client-side React application simulating a Next.js App Router structure.
 

@@ -30,10 +30,9 @@ export default async function Home() {
       <section className="relative z-10 w-full pt-32 pb-24 md:py-32 flex flex-col items-center border-b border-black/10 bg-white">
         <div className="absolute top-28 left-6 md:top-32 md:left-20">
           <div className="font-mono text-xs uppercase text-neutral-500 tracking-wider flex flex-col">
-            <span>Tech.</span>
-            <span>Life.</span>
-            <span>Fun.</span>
-            <span>Rushi's Blog.</span>
+            <span>Hey.</span>
+            <span>I'm Rushi and I like writing.</span>
+            <span>I'd love if you read it.</span>
           </div>
         </div>
 

@@ -2,8 +2,7 @@
 
 import React, { useState, FormEvent } from "react";
 import { X, Loader2 } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
+import { trackEvent } from "@/lib/analytics";
 
 interface SubscribeModalProps {
   isOpen: boolean;
@@ -12,30 +11,51 @@ interface SubscribeModalProps {
 
 export function SubscribeModal({ isOpen, onClose }: SubscribeModalProps) {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [botField, setBotField] = useState(""); // honeypot
 
   if (!isOpen) return null;
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
-    setMessage("");
+    setError(null);
+    setSuccess(false);
 
-    // Basic validation
-    if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-      setStatus("error");
-      setMessage("Please enter a valid email address.");
+    if (!email) {
+      setError("Please enter your email.");
       return;
     }
 
-    // Simulate API call
-    setTimeout(() => {
-      // In production: await fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) })
-      setStatus("success");
-      setMessage("You have been added to the database.");
-      setEmail("");
-    }, 1500);
+    setLoading(true);
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          source: "modal",
+          botField,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setSuccess(true);
+        setEmail("");
+        // Track subscription event if analytics is available
+        trackEvent("subscribe", { source: "modal" });
+      } else {
+        setError(data.error || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      console.error(err);
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -62,19 +82,29 @@ export function SubscribeModal({ isOpen, onClose }: SubscribeModalProps) {
           </p>
         </div>
 
-        {status === "success" ? (
+        {success ? (
           <div className="flex flex-col items-center justify-center py-8 text-center animate-in fade-in">
              <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
              </div>
-             <p className="font-medium text-lg">Subscribed successfully.</p>
-             <p className="text-neutral-500 text-sm mt-2">{message}</p>
+             <p className="font-medium text-lg">You're in. Check your inbox soon.</p>
              <button onClick={onClose} className="mt-6 text-sm underline decoration-neutral-300 underline-offset-4">Close</button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            {/* Honeypot field - hidden from users */}
+            <input
+              type="text"
+              name="botField"
+              value={botField}
+              onChange={(e) => setBotField(e.target.value)}
+              className="hidden"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+            />
             <div className="flex flex-col gap-2">
               <label htmlFor="email" className="font-mono text-xs uppercase text-neutral-500">Email Address</label>
               <input
@@ -84,20 +114,20 @@ export function SubscribeModal({ isOpen, onClose }: SubscribeModalProps) {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@domain.com"
                 className="w-full bg-neutral-50 border border-neutral-200 p-3 text-sm focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-all"
-                disabled={status === "loading"}
+                disabled={loading}
               />
-              {status === "error" && (
-                <span className="text-red-500 text-xs font-mono">{message}</span>
+              {error && (
+                <span className="text-red-500 text-xs font-mono">{error}</span>
               )}
             </div>
 
             <button
               type="submit"
-              disabled={status === "loading"}
+              disabled={loading}
               className="w-full bg-black text-white p-3 text-sm font-medium tracking-wide hover:bg-neutral-800 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-colors"
             >
-              {status === "loading" && <Loader2 className="w-4 h-4 animate-spin" />}
-              {status === "loading" ? "PROCESSING..." : "SUBSCRIBE"}
+              {loading && <Loader2 className="w-4 h-4 animate-spin" />}
+              {loading ? "Subscribing..." : "Subscribe"}
             </button>
           </form>
         )}
