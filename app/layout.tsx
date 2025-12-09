@@ -47,6 +47,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="font-sans text-black selection:bg-black selection:text-white bg-white bg-noise min-h-screen flex flex-col">
+        {/* Google tag (gtag.js) - must be immediately after <head> */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-XMWKEH6KVK"
+          strategy="beforeInteractive"
+        />
+        <Script id="google-tag" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XMWKEH6KVK');
+          `}
+        </Script>
         {/* Google AdSense - must be in <head> */}
         <Script
           async
@@ -54,23 +68,6 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="beforeInteractive"
         />
-        {/* Google Analytics 4 - only load if ID is configured */}
-        {isAnalyticsEnabled() && gaId && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${gaId}');
-              `}
-            </Script>
-          </>
-        )}
         <BackgroundGrid />
         <Navbar />
         <div className="flex-grow flex flex-col">
