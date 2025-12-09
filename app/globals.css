@@ -11,25 +11,16 @@
     text-rendering: optimizeLegibility;
   }
   
-  /* Make all text darker and bolder by default, but not in footer */
-  p:not(footer p), 
-  span:not(footer span), 
-  div:not(footer div), 
-  a:not(footer a), 
-  li:not(footer li), 
-  td:not(footer td), 
-  th:not(footer th) {
+  /* Make all text darker and bolder by default, but not in footer or buttons */
+  p:not(footer p):not(button p), 
+  span:not(footer span):not(button span):not(button *), 
+  div:not(footer div):not(button div):not(button *), 
+  a:not(footer a):not(button a):not(button *), 
+  li:not(footer li):not(button li):not(button *), 
+  td:not(footer td):not(button td):not(button *), 
+  th:not(footer th):not(button th):not(button *) {
     color: #000000;
     font-weight: 500;
-  }
-  
-  /* Ensure buttons with black background have white text */
-  button.bg-black {
-    color: #ffffff !important;
-  }
-  
-  button.bg-black * {
-    color: #ffffff !important;
   }
   
   /* Increase heading weights, but not in footer */
