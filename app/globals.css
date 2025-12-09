@@ -23,14 +23,12 @@
     font-weight: 500;
   }
   
-  /* Ensure buttons with text-white class have white text */
-  button.text-white,
-  button[class*="text-white"] {
+  /* Ensure buttons with black background have white text */
+  button.bg-black {
     color: #ffffff !important;
   }
   
-  button.text-white *,
-  button[class*="text-white"] * {
+  button.bg-black * {
     color: #ffffff !important;
   }
   
