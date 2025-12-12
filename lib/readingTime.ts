@@ -34,3 +34,4 @@ export function formatWordCount(count: number): string {
   return count.toLocaleString();
 }
 
+

@@ -12,3 +12,4 @@ Tokyo is a city of neon and shadows. Digital sensors try to balance the dynamic 
 
 Film has grain. It has character. It forces you to slow down and compose. You only have 36 shots. Make them count.
 
+

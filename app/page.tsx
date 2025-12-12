@@ -143,12 +143,12 @@ export default async function Home() {
         </div>
 
         {/* Floating UI Element: Bottom Right (Socials) */}
-        <div className="relative md:absolute mt-8 md:mt-0 md:bottom-20 md:right-20 flex md:flex-col gap-6 md:gap-2 items-center md:items-end">
+        <div className="relative md:absolute mt-8 md:mt-0 md:bottom-20 md:right-20 flex flex-wrap md:flex-col gap-3 md:gap-2 items-center md:items-end justify-center md:justify-end">
           <a
             href="https://www.shadowsolutions.tech/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium tracking-tight hover:text-neutral-500 transition-colors flex items-center gap-2 group"
+            className="text-base md:text-sm font-medium tracking-tight hover:text-neutral-500 transition-colors flex items-center gap-2 group px-4 py-3 md:px-0 md:py-0 touch-manipulation"
           >
             <span className="group-hover:-translate-x-1 transition-transform duration-300">
               Shadow Solutions
@@ -159,7 +159,7 @@ export default async function Home() {
             href="https://caleoai.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium tracking-tight hover:text-neutral-500 transition-colors flex items-center gap-2 group"
+            className="text-base md:text-sm font-medium tracking-tight hover:text-neutral-500 transition-colors flex items-center gap-2 group px-4 py-3 md:px-0 md:py-0 touch-manipulation"
           >
             <span className="group-hover:-translate-x-1 transition-transform duration-300">
               Caleo
@@ -170,7 +170,7 @@ export default async function Home() {
             href="https://getverity.io"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium tracking-tight hover:text-neutral-500 transition-colors flex items-center gap-2 group"
+            className="text-base md:text-sm font-medium tracking-tight hover:text-neutral-500 transition-colors flex items-center gap-2 group px-4 py-3 md:px-0 md:py-0 touch-manipulation"
           >
             <span className="group-hover:-translate-x-1 transition-transform duration-300">
               Verity
@@ -181,7 +181,7 @@ export default async function Home() {
             href="https://www.linkedin.com/in/rushi-patel-uiuc/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium tracking-tight hover:text-neutral-500 transition-colors flex items-center gap-2 group"
+            className="text-base md:text-sm font-medium tracking-tight hover:text-neutral-500 transition-colors flex items-center gap-2 group px-4 py-3 md:px-0 md:py-0 touch-manipulation"
           >
             <span className="group-hover:-translate-x-1 transition-transform duration-300">
               LinkedIn
