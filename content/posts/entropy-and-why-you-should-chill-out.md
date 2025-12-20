@@ -1,6 +1,6 @@
 ---
 title: "Entropy, and Why You Should Chill Out"
-description: "Exploring entropy as a lens for understanding life, relationships, and the constant flux of our personal systems."
+description: "Thermodynamics <> Philosophy"
 date: "2025-12-09"
 category: "life"
 tags: ["entropy", "philosophy", "life", "systems", "thermodynamics"]

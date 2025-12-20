@@ -134,7 +134,7 @@ export default async function Home() {
           </div>
           <div className="flex flex-col">
             <span className="text-sm font-semibold uppercase tracking-tight">
-              Preppin' for 2026
+              Working on "My Time in Europe"
             </span>
             <span className="font-mono text-xs text-neutral-500 mt-1">
               Chicago, IL

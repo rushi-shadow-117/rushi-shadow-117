@@ -42,8 +42,7 @@ const faqItems: FAQItem[] = [
     q: "When it comes to your thoughts on tech and the professional world, do you think you know enough to have a qualified opinion? You're not an executive.",
     a: (
       <>
-        <p>Actually, I do.</p>
-        <p>Thinking critically and noticing things isn't something you need to be a Director to do, but you need to temper it with a simple thought: <strong>I might be wrong.</strong></p>
+        <p>Yep.</p>
       </>
     ),
   },
