@@ -18,11 +18,11 @@ export function PostRow({ slug, title, date, description }: PostRowProps) {
             {formatDate(date)}
           </span>
         </div>
-        <div className="flex-1">
-          <h3 className="text-2xl md:text-4xl font-medium tracking-tight mb-2 group-hover:translate-x-2 transition-transform duration-300">
+        <div className="flex-1 min-w-0">
+          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight mb-2 group-hover:translate-x-2 transition-transform duration-300 break-words">
             {title}
           </h3>
-          <p className="text-lg text-neutral-600 max-w-xl leading-relaxed">
+          <p className="text-base sm:text-lg text-neutral-600 max-w-xl leading-relaxed break-words">
             {description}
           </p>
         </div>

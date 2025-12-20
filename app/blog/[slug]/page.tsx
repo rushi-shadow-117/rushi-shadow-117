@@ -182,7 +182,7 @@ export default async function PostPage({ params }: PostPageProps) {
                </div>
              )}
           </div>
-          <h1 className="text-4xl md:text-6xl font-semibold tracking-tighter leading-tight text-black">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tighter leading-tight text-black break-words">
             {post.title}
           </h1>
         </header>
@@ -193,7 +193,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
         {/* Content */}
         <div 
-          className="prose prose-neutral prose-lg max-w-none prose-headings:font-medium prose-headings:tracking-tight prose-p:text-neutral-600 prose-a:text-black prose-a:underline-offset-4 hover:prose-a:text-neutral-500"
+          className="prose prose-sm sm:prose-base md:prose-lg prose-neutral max-w-none prose-headings:font-medium prose-headings:tracking-tight prose-p:text-neutral-600 prose-a:text-black prose-a:underline-offset-4 hover:prose-a:text-neutral-500 prose-headings:break-words prose-p:break-words"
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
 

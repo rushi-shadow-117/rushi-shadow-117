@@ -46,7 +46,7 @@ export function FAQ({ items, defaultOpenIndex = -1 }: FAQProps) {
                 onClick={() => toggleItem(index)}
                 id={itemId}
               >
-                <span className="text-xl md:text-2xl font-semibold tracking-tight text-black flex-1">
+                <span className="text-lg sm:text-xl md:text-2xl font-semibold tracking-tight text-black flex-1 break-words">
                   {item.q}
                 </span>
                 <ChevronDown

@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { getAllPosts } from "@/lib/posts";
 import { SITE_NAME } from "@/lib/site";
 import { PostRow } from "@/components/blog/PostRow";
+import { ComingSoonQueue } from "@/components/blog/ComingSoonQueue";
 import { OrbitalIcon } from "@/components/visuals/OrbitalIcon";
 import { PortraitImage } from "@/components/visuals/PortraitImage";
 
@@ -125,7 +126,7 @@ export default async function Home() {
         </div>
 
         {/* Floating UI Element: Bottom Left (Status) */}
-        <div className="relative md:absolute mt-8 md:mt-0 md:bottom-20 md:left-20 w-48 border border-black/10 bg-white/50 backdrop-blur-sm p-4 rounded-none group hover:border-black transition-colors duration-300">
+        <div className="relative md:absolute mt-8 md:mt-0 md:bottom-20 md:left-20 w-full md:w-48 lg:w-56 border border-black/10 bg-white/50 backdrop-blur-sm p-4 rounded-none group hover:border-black transition-colors duration-300">
           <div className="flex justify-between items-start mb-4">
             <span className="font-mono text-xs uppercase text-neutral-500 tracking-wider">
               Status
@@ -133,8 +134,8 @@ export default async function Home() {
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
           </div>
           <div className="flex flex-col">
-            <span className="text-sm font-semibold uppercase tracking-tight">
-              Working on "My Time in Europe"
+            <span className="text-xs sm:text-sm font-semibold uppercase tracking-tight break-words">
+              Deciding on traveling for the holidays
             </span>
             <span className="font-mono text-xs text-neutral-500 mt-1">
               Chicago, IL
@@ -223,7 +224,10 @@ export default async function Home() {
               </React.Fragment>
             ))}
             
-            <div className="border-t border-black/20 pt-10">
+            {/* Coming Soon Queue */}
+            <ComingSoonQueue />
+            
+            <div className="border-t border-black/20 pt-10 mt-12">
               <Link href="/blog" className="inline-flex items-center gap-2 font-mono text-sm hover:underline underline-offset-4">
                  VIEW FULL ARCHIVE <ArrowUpRight className="w-4 h-4" />
               </Link>

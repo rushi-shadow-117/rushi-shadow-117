@@ -17,7 +17,7 @@ export default function Contact() {
               get in<br />
               touch
             </h1>
-            <p className="text-xl text-neutral-600 max-w-xl">
+            <p className="text-lg sm:text-xl text-neutral-600 max-w-xl break-words">
               I love talking to people. Get in touch about anything.
             </p>
         </div>
@@ -25,7 +25,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-black/10 pt-12">
            <div>
              <span className="font-mono text-xs uppercase text-neutral-500 mb-4 block">Email</span>
-             <a href="mailto:rushi@shadowsolutions.tech" className="text-2xl md:text-3xl font-medium hover:text-neutral-600 transition-colors">
+             <a href="mailto:rushi@shadowsolutions.tech" className="text-xl sm:text-2xl md:text-3xl font-medium hover:text-neutral-600 transition-colors break-all">
                rushi@shadowsolutions.tech
              </a>
            </div>

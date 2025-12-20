@@ -5,7 +5,7 @@ import { OrbitalIcon } from "@/components/visuals/OrbitalIcon";
 
 export const metadata: Metadata = {
   title: `About | ${SITE_NAME}`,
-  description: "I am a builder, writer, and product engineer based in Chicago.",
+  description: "I'm Rushi. I build software.",
 };
 
 export default function About() {
@@ -23,22 +23,22 @@ export default function About() {
         </div>
 
         <div className="max-w-2xl">
-          <p className="text-xl md:text-2xl leading-relaxed font-medium mb-12">
-            I am a builder, writer, and product engineer based in Chicago.
-          </p>
-          
-          <div className="prose prose-neutral prose-lg">
+          <div className="prose prose-neutral prose-lg max-w-none">
+            <p className="text-lg sm:text-xl md:text-2xl leading-relaxed font-medium mb-8 break-words">
+              I'm Rushi. I build software.
+            </p>
+            
             <p>
-              I believe in the power of shipping. Ideas are cheap; execution is everything. 
-              My work spans across full-stack engineering, design systems, and product strategy.
+              I studied Chemistry and Computer Science at UIUC, and I've spent the last few years working in IT and data roles at a Fortune 100 company. Alongside that, I build products under Shadow Solutions, where I ship software, manage a small team, and try to turn ideas into things that actually work.
             </p>
             <p>
-              Currently, I'm exploring the intersection of AI and creative tools, building 
-              systems that help people think better and faster.
+              This site is where I put work and thoughts as they evolve. Some of it is technical. Some of it isn't. Most of it is unfinished.
             </p>
             <p>
-              When I'm not coding, I'm usually reading sci-fi, running, or tinkering with 
-              analog photography.
+              Outside of work, I'm a huge nerd.
+            </p>
+            <p>
+              I like books, RPGs, comics, and plenty of other things. I'll be writing about these interests as well.
             </p>
           </div>
         </div>

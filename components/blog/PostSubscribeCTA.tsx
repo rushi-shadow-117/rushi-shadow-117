@@ -37,13 +37,13 @@ export function PostSubscribeCTA({ onSubscribeClick }: PostSubscribeCTAProps) {
 
   return (
     <div className="mt-20 pt-12 border-t border-black/10">
-      <div className="bg-neutral-50 border border-black/10 p-8 md:p-12">
+      <div className="bg-neutral-50 border border-black/10 p-6 sm:p-8 md:p-12">
         <div className="max-w-2xl">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-black mb-4">
-            Join the signal
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-black mb-4 break-words">
+            Subscribe
           </h2>
-          <p className="text-neutral-600 mb-6 leading-relaxed">
-            Subscribe to <strong>brain dump</strong>. Occasional long-form essays on engineering, design, and entropy. No spam, ever.
+          <p className="text-sm sm:text-base text-neutral-600 mb-6 leading-relaxed break-words">
+            You'll get an email when I post things. I won't spam you. Promise.
           </p>
           <button
             onClick={handleClick}

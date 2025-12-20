@@ -67,7 +67,7 @@ export function SubscribeModal({ isOpen, onClose }: SubscribeModalProps) {
       ></div>
 
       {/* Modal Content */}
-      <div className="relative bg-white w-full max-w-md p-8 shadow-2xl border border-black/10 animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative bg-white w-full max-w-md p-6 sm:p-8 shadow-2xl border border-black/10 animate-in fade-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto">
         <button 
           onClick={onClose}
           className="absolute top-4 right-4 p-2 hover:bg-neutral-100 rounded-sm transition-colors"
@@ -76,9 +76,9 @@ export function SubscribeModal({ isOpen, onClose }: SubscribeModalProps) {
         </button>
 
         <div className="mb-6">
-          <h2 className="text-2xl font-semibold tracking-tight mb-2">Join the signal</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-2">Subscribe</h2>
           <p className="text-neutral-500 text-sm leading-relaxed">
-            Subscribe to <strong>brain dump</strong>. Occasional long-form essays on engineering, design, and entropy. No spam, ever.
+            You'll get an email when I post things. I won't spam you. Promise.
           </p>
         </div>
 
