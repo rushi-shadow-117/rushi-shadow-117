@@ -15,7 +15,17 @@ const faqItems: FAQItem[] = [
     a: (
       <>
         <p>I've always wanted to. I enjoy writing, and hopefully someone enjoys reading what I write.</p>
-        <p>Based on the content, you can probably call this platform a lot of things. <strong>Digital journal. Public facing notes App. Career limiting move.</strong> I'll stick with Blog.</p>
+        <p>Based on the content, you can probably call this platform a lot of things. <strong>Digital journal. Public facing notes App. Career limiting move.</strong></p>
+      </>
+    ),
+  },
+  {
+    q: "Who's the intended audience for the blog?",
+    a: (
+      <>
+        <p>It's dependent on the subject matter for the blog, but I intentionally write in the same style as I think and talk. So the audience is anyone who enjoys listening to me talk?</p>
+        <p>I want it to be almost conversational, and for it to be a leisurely read for the most part. <strong>Light, not taking itself too seriously and entertaining as well as informative.</strong></p>
+        <p>Let me know if I hit the mark!</p>
       </>
     ),
   },
@@ -34,7 +44,7 @@ const faqItems: FAQItem[] = [
       <>
         <p>No, definitely not. Well, at least not directly.</p>
         <p>A few of the topics I write about I will have some subject matter expertise, but when it comes to outlook on life, retrospectives and topics concerning mental health, I'm just voicing my thoughts.</p>
-        <p>While I won't pretend to preach answers, I'd love it if you could be guided to find introspects and find answers on your own. You might find that I'm completely wrong about something and thinking about it gives you space to reflect and find clarity, I 100% support that.</p>
+        <p>While I won't pretend to preach answers, I'd love it if you could be guided to find introspects and find answers on your own. You might find that I'm completely wrong about something and that's okay. If thinking about it gives you space to reflect and find clarity, I 100% support that.</p>
       </>
     ),
   },
@@ -47,21 +57,18 @@ const faqItems: FAQItem[] = [
     ),
   },
   {
-    q: "Who's the intended audience for the blog?",
+    q: "Why not just post to Linkedin or Substack?",
     a: (
       <>
-        <p>It's dependent on the subject matter for the blog, but I intentionally write in the same style as I think and talk. So the audience is anyone who enjoys listening to me talk?</p>
-        <p>I want it to be almost conversational, and for it to be a leisurely read for the most part. <strong>Light, not taking itself too seriously and entertaining as well as informative.</strong></p>
-        <p>Let me know if I hit the mark!</p>
+        <p>I could! I wanted to have my own platform, custom coded and hosted by me.</p>
       </>
     ),
   },
   {
-    q: "Is there any way to support you?",
+    q: "Do you use AI to write?",
     a: (
       <>
-        <p>If you asked yourself this before I prompted it, thanks! I really appreciate that.</p>
-        <p>The only support I need is a comment or note if you enjoyed what you read, agree/disagree, or just any type of reaction.</p>
+        <p>Nah. The writing would probably be better if I did.</p>
       </>
     ),
   },

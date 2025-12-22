@@ -63,13 +63,13 @@ With all these switches and resets, no one really knows what to expect.
 
 And that's exactly why 2026 is such a good time to start watching.
 
-If you're curious about F1, right now is the offseason. There are a few easy things you can do to kill some time until the season starts in March.
+If you're curious about F1, right now is the offseason. There are a few easy things you can do to kill some time until the [season starts in March](https://www.formula1.com/en/racing/2026).
 
-F1 put out a highlight reel of every race from the 2025 season in one video. Lucky for us, the first race of the year in Australia was a banger, so you'll immediately see whether the sport is something you'd be interested in. Watching the whole thing, even on a second monitor while you work or game, gives you a solid feel for how a season actually unfolds.
+F1 put out a [highlight reel](https://www.youtube.com/watch?v=IiaVcT3SZv0) of every race from the 2025 season in one video. Lucky for us, the first race of the year in Australia was a banger, so you'll immediately see whether the sport is something you'd be interested in. Watching the whole thing, even on a second monitor while you work or game, gives you a solid feel for how a season actually unfolds.
 
-If you want more context, check out *P1 with Matt and Tommy*. They're two chill guys who know a lot about F1, break things down without the corporate nonsense, and are genuinely entertaining.
+If you want more context, check out [*P1 with Matt and Tommy*](https://www.youtube.com/@mattp1tommy). They're two chill guys who know a lot about F1, break things down without the corporate nonsense, and are genuinely entertaining.
 
-And then in February, when Netflix drops the next season of *Drive to Survive*, watch that too.
+And then in February, when Netflix drops the next season of [*Drive to Survive*](https://www.netflix.com/title/80204890), watch that too.
 
 The next F1 article will be my opinion on each team and driver going into 2026.
 
