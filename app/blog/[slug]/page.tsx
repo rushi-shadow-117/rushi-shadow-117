@@ -10,6 +10,7 @@ import { getWordCount, getReadingTimeMinutes, formatWordCount } from "@/lib/read
 import { ScrollProgressBar } from "@/components/blog/ScrollProgressBar";
 import { Breadcrumbs, getPostBreadcrumbs } from "@/components/navigation/Breadcrumbs";
 import { PostSubscribeCTA } from "@/components/blog/PostSubscribeCTA";
+import { ViewCount } from "@/components/blog/ViewCount";
 // import { AdSlot } from "@/components/visuals/AdSlot"; // DISABLED during AdSense review - uncomment when approved
 
 interface PostPageProps {
@@ -172,6 +173,7 @@ export default async function PostPage({ params }: PostPageProps) {
              <span className="font-mono text-sm text-neutral-500">
                {readingTime} min read • {formattedWordCount} words
              </span>
+             <ViewCount slug={post.slug} trackView={true} />
              {post.tags && post.tags.length > 0 && (
                <div className="flex gap-2">
                  {post.tags.map(tag => (

@@ -8,7 +8,7 @@ import { Breadcrumbs, getCategoryBreadcrumbs } from "@/components/navigation/Bre
 
 export const metadata: Metadata = {
   title: `Work | ${SITE_NAME}`,
-  description: "Projects, case studies, and engineering philosophy. How I build.",
+  description: "Caleo, Verity, Shadow Solutions. My hot takes on work and tech.",
 };
 
 export default async function WorkPage() {
@@ -47,7 +47,7 @@ export default async function WorkPage() {
             <WorkOrbitalIcon />
           </div>
           <p className="font-mono text-sm md:text-base hidden md:block text-right text-neutral-500 pb-2 max-w-sm">
-            Projects, case studies, and engineering philosophy. How I build.
+            Caleo, Verity, Shadow Solutions. My hot takes on work and tech.
           </p>
         </div>
 

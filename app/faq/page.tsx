@@ -50,7 +50,7 @@ const faqItems: FAQItem[] = [
     q: "Who's the intended audience for the blog?",
     a: (
       <>
-        <p>It's dependent on the subject matter for the blog, but I intentionally write in the same style as I think and talk.</p>
+        <p>It's dependent on the subject matter for the blog, but I intentionally write in the same style as I think and talk. So the audience is anyone who enjoys listening to me talk?</p>
         <p>I want it to be almost conversational, and for it to be a leisurely read for the most part. <strong>Light, not taking itself too seriously and entertaining as well as informative.</strong></p>
         <p>Let me know if I hit the mark!</p>
       </>

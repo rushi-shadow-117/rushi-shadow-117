@@ -8,7 +8,7 @@ import { Breadcrumbs, getCategoryBreadcrumbs } from "@/components/navigation/Bre
 
 export const metadata: Metadata = {
   title: `Fun | ${SITE_NAME}`,
-  description: "Photography, sci-fi books, and random obsessions.",
+  description: "Nerd stuff. F1. Stuff I like thinking about.",
 };
 
 export default async function FunPage() {
@@ -47,7 +47,7 @@ export default async function FunPage() {
             <FunOrbitalIcon />
           </div>
           <p className="font-mono text-sm md:text-base hidden md:block text-right text-neutral-500 pb-2 max-w-sm">
-            Photography, sci-fi books, and random obsessions.
+            Nerd stuff. F1. Stuff I like thinking about.
           </p>
         </div>
 
