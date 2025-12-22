@@ -28,8 +28,8 @@ export default async function Home() {
   return (
     <>
       {/* 1. Hero / Work Visual */}
-      <section className="relative z-10 w-full pt-32 pb-24 md:py-32 flex flex-col items-center border-b border-black/10 bg-white">
-        <div className="absolute top-28 left-6 md:top-32 md:left-20">
+      <section className="relative z-10 w-full pt-24 sm:pt-32 pb-16 sm:pb-24 md:py-32 flex flex-col items-center border-b border-black/10 bg-white px-4 sm:px-6">
+        <div className="absolute top-20 sm:top-28 left-4 sm:left-6 md:top-32 md:left-20">
           <div className="font-mono text-xs uppercase text-neutral-500 tracking-wider flex flex-col">
             <span>Hey.</span>
             <span>I'm Rushi and I like writing.</span>
@@ -38,10 +38,12 @@ export default async function Home() {
         </div>
 
         {/* CTA Section */}
-        <HeroCTA />
+        <div className="w-full max-w-2xl mt-12 sm:mt-16 md:mt-0">
+          <HeroCTA />
+        </div>
 
         {/* Floating UI Element: Bottom Left (Status) */}
-        <div className="relative md:absolute mt-8 md:mt-0 md:bottom-20 md:left-20 w-full md:w-48 lg:w-56 border border-black/10 bg-white/50 backdrop-blur-sm p-4 rounded-none group hover:border-black transition-colors duration-300">
+        <div className="relative md:absolute mt-6 sm:mt-8 md:mt-0 md:bottom-20 md:left-20 w-full max-w-xs sm:max-w-sm md:w-48 lg:w-56 border border-black/10 bg-white/50 backdrop-blur-sm p-4 rounded-none group hover:border-black transition-colors duration-300">
           <div className="flex justify-between items-start mb-4">
             <span className="font-mono text-xs uppercase text-neutral-500 tracking-wider">
               Status
@@ -59,7 +61,7 @@ export default async function Home() {
         </div>
 
         {/* Floating UI Element: Bottom Right (Socials) */}
-        <div className="relative md:absolute mt-8 md:mt-0 md:bottom-20 md:right-20 flex flex-wrap md:flex-col gap-3 md:gap-2 items-center md:items-end justify-center md:justify-end">
+        <div className="relative md:absolute mt-6 sm:mt-8 md:mt-0 md:bottom-20 md:right-20 flex flex-wrap md:flex-col gap-3 md:gap-2 items-center md:items-end justify-center md:justify-end w-full md:w-auto">
           <a
             href="https://www.shadowsolutions.tech/"
             target="_blank"
@@ -108,12 +110,12 @@ export default async function Home() {
       </section>
 
       {/* 2. Blog Preview / Brain Dump */}
-      <section id="blog-preview" className="w-full px-6 md:px-20 py-24 bg-white relative z-20">
+      <section id="blog-preview" className="w-full px-4 sm:px-6 md:px-20 py-16 sm:py-20 md:py-24 bg-white relative z-20">
         <div className="max-w-7xl mx-auto">
           {/* Header Area with Animation */}
-          <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-20 gap-8">
-            <div className="flex items-center gap-6 md:gap-12">
-              <h2 className="text-5xl md:text-8xl font-semibold tracking-tighter text-black leading-[0.9]">
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 sm:mb-16 md:mb-20 gap-6 sm:gap-8">
+            <div className="flex items-center gap-4 sm:gap-6 md:gap-12">
+              <h2 className="text-4xl sm:text-5xl md:text-8xl font-semibold tracking-tighter text-black leading-[0.9]">
                 latest<br />
                 notes
               </h2>

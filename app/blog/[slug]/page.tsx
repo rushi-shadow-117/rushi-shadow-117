@@ -10,7 +10,6 @@ import { getWordCount, getReadingTimeMinutes, formatWordCount } from "@/lib/read
 import { ScrollProgressBar } from "@/components/blog/ScrollProgressBar";
 import { Breadcrumbs, getPostBreadcrumbs } from "@/components/navigation/Breadcrumbs";
 import { PostSubscribeCTA } from "@/components/blog/PostSubscribeCTA";
-import { ViewCount } from "@/components/blog/ViewCount";
 // import { AdSlot } from "@/components/visuals/AdSlot"; // DISABLED during AdSense review - uncomment when approved
 
 interface PostPageProps {
@@ -166,16 +165,15 @@ export default async function PostPage({ params }: PostPageProps) {
 
         {/* Header */}
         <header className="mb-12">
-          <div className="flex items-center gap-4 mb-6 flex-wrap">
-             <span className="font-mono text-sm text-neutral-500 uppercase tracking-wide">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-6 flex-wrap">
+             <span className="font-mono text-xs sm:text-sm text-neutral-500 uppercase tracking-wide">
                {formatDate(post.date)}
              </span>
-             <span className="font-mono text-sm text-neutral-500">
+             <span className="font-mono text-xs sm:text-sm text-neutral-500">
                {readingTime} min read • {formattedWordCount} words
              </span>
-             <ViewCount slug={post.slug} trackView={true} />
              {post.tags && post.tags.length > 0 && (
-               <div className="flex gap-2">
+               <div className="flex gap-2 flex-wrap">
                  {post.tags.map(tag => (
                    <span key={tag} className="font-mono text-xs bg-neutral-100 px-2 py-1 rounded-sm text-neutral-600">
                      #{tag}

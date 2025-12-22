@@ -48,7 +48,7 @@ export default function About() {
 
           {/* Image Carousel */}
           <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0">
-            <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden contrast-110 shadow-2xl shadow-neutral-200 bg-neutral-50">
+            <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden contrast-110 shadow-2xl shadow-neutral-200 bg-neutral-50">
               <PortraitImage />
             </div>
           </div>
