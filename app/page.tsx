@@ -28,8 +28,8 @@ export default async function Home() {
   return (
     <>
       {/* 1. Hero / Work Visual */}
-      <section className="relative z-10 w-full pt-24 sm:pt-32 pb-16 sm:pb-24 md:py-32 flex flex-col items-center border-b border-black/10 bg-white px-4 sm:px-6">
-        <div className="absolute top-20 sm:top-28 left-4 sm:left-6 md:top-32 md:left-20">
+      <section className="relative z-10 w-full pt-32 sm:pt-36 pb-16 sm:pb-24 md:py-32 flex flex-col items-center border-b border-black/10 bg-white px-4 sm:px-6">
+        <div className="absolute top-24 sm:top-32 left-4 sm:left-6 md:top-32 md:left-20">
           <div className="font-mono text-xs uppercase text-neutral-500 tracking-wider flex flex-col">
             <span>Hey.</span>
             <span>I'm Rushi and I like writing.</span>
