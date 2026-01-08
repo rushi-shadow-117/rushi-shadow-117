@@ -52,7 +52,7 @@ export default async function Home() {
           </div>
           <div className="flex flex-col">
             <span className="text-xs sm:text-sm font-semibold uppercase tracking-tight break-words">
-              Deciding on traveling for the holidays
+              I thought I'd have more time to write things
             </span>
             <span className="font-mono text-xs text-neutral-500 mt-1">
               Chicago, IL
