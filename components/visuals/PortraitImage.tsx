@@ -9,7 +9,6 @@ export function PortraitImage() {
     "/images/IMG_0346.JPG",
     "/images/IMG_0226.JPG",
     "/images/IMG_4351.jpeg",
-    "/images/pic1.JPG",
     "/images/pic2.JPG"
   ];
 
