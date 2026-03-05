@@ -10,36 +10,24 @@ interface QueueItem {
 const queueItems: QueueItem[] = [
   {
     id: "01",
-    title: "My Time in Europe",
-    status: "WIP",
-    category: ["life", "work", "fun"],
-  },
-  {
-    id: "02",
-    title: "clad labs, ragebait and building for reality",
-    status: "still in my head",
-    category: "work",
-  },
-  {
-    id: "03",
     title: "Something about Fitness",
     status: "Earning an opinion.",
     category: "life",
   },
   {
-    id: "04",
+    id: "02",
     title: "My Career Story so Far",
     status: "WIP",
     category: "work",
   },
   {
-    id: "05",
+    id: "03",
     title: "If I wasn't a Software Engineer...",
     status: "Still in my head",
     category: "life",
   },
   {
-    id: "06",
+    id: "04",
     title: "Kratos, Geralt and Batman",
     status: "Deciding on whether it's worth writing",
     category: "fun",
