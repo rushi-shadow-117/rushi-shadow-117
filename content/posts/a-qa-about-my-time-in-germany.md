@@ -88,7 +88,7 @@ Otherwise, the fun was mostly built into how I lived. Throw a dart at the map an
 
 Frittenwerk was a go-to. Doner kebab became a staple for obvious reasons, it's everywhere and it's always good. Katik was a nice find. Roman food hit different when I was in Italy, something about the simplicity of it. Copenhagen had incredible food across the board. Krakow surprised me too.
 
-And honestly, anytime I'd go to my aunt's house, I remember any homemade food tasting amazing no matter how simple it was. That probably says more about how little energy I wanted to put into cooking at the time than anything else.
+And honestly, anytime I'd go to my aunt's house, I remember any homemade food tasting amazing. Defintely a highlight.
 
 ---
 
